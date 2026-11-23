@@ -3,14 +3,21 @@ namespace KeyEventLogger;
 static class Program
 {
     /// <summary>
-    ///  The main entry point for the application.
+    /// Uygulamanın ana giriş noktası.
     /// </summary>
     [STAThread]
     static void Main()
     {
-        // To customize application configuration such as set high DPI settings or default font,
-        // see https://aka.ms/applicationconfiguration.
-        ApplicationConfiguration.Initialize();
-        Application.Run(new Form1());
+        try
+        {
+            ApplicationConfiguration.Initialize();
+            Application.Run(new MainForm());
+        }
+        catch (Exception ex)
+        {
+            string logPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "startup_error.log");
+            File.WriteAllText(logPath, ex.ToString());
+            MessageBox.Show(ex.Message, "Başlatma Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }    
 }

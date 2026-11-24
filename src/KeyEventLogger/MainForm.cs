@@ -86,6 +86,39 @@ public partial class MainForm : Form
 
     private void MainForm_KeyDown(object? sender, KeyEventArgs e)
     {
+        // Hızlı Yönetim Kısayolları (Shortcuts)
+        if (e.KeyCode == Keys.F5)
+        {
+            _logService.StartLogging();
+            e.Handled = true;
+            return;
+        }
+        if (e.KeyCode == Keys.F6)
+        {
+            _logService.StopLogging();
+            e.Handled = true;
+            return;
+        }
+        if (e.KeyCode == Keys.F7)
+        {
+            BtnClear_Click(sender, e);
+            e.Handled = true;
+            return;
+        }
+        if (e.Control && e.KeyCode == Keys.S)
+        {
+            BtnExport_Click(sender, e);
+            e.Handled = true;
+            return;
+        }
+        if (e.Control && e.KeyCode == Keys.F)
+        {
+            txtFilterSearch.Focus();
+            txtFilterSearch.SelectAll();
+            e.Handled = true;
+            return;
+        }
+
         // Yalnızca form açık ve odaktayken yakalanır (Güvenlik Kapsamı)
         var record = _logService.RecordEvent("KeyDown", e.KeyCode, e.Modifiers);
         if (record != null)

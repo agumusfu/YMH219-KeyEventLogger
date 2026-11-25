@@ -18,8 +18,8 @@ Bu proje, **Nesne Tabanlı Programlama (YMH 219)** dersi kapsamında geliştiril
 
 - **Ders:** Nesne Tabanlı Programlama (YMH 219)
 - **Ödev Konusu:** Ödev 4 — Key Event Logger (Eğitsel Keylogger)
-- **Geliştirici / Öğrenci:** `agumusfu` ([Öğrenci Adı Soyadı])
-- **Öğrenci Numarası:** [Öğrenci Numarası]
+- **Geliştirici / Öğrenci:** Abdullah Gümüş (`agumusfu`)
+- **Öğrenci Numarası:** 250542016
 - **Platform / Çatı:** .NET 8.0 Windows Desktop (C# 12)
 - **Arayüz Teknolojisi:** Windows Forms (WinForms)
 
